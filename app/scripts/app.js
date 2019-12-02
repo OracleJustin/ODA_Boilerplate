@@ -63,51 +63,16 @@ function initBots(appId){
     return Bots.init({
         appId: appId,
 
-        // locale: 'en-US',
-        // soundNotificationEnabled: true,
-        // imageUploadEnabled: true,
-        // displayStyle: 'button',
-        // buttonIconUrl: '{Url to image at least 200 x 200 pixels and in either JPG, PNG, or GIF format}',
-        // buttonWidth: '58px',
-        // buttonHeight: '58px',
         businessName: 'Oracle, MCE',
         businessIconUrl: '/images/oracle-o-logo.png',
         
         customColors: {
             brandColor: '286090',
-            // conversationColor: '65758e',
-            // actionColor: '65758e',
         },
 
         customText: {
-            // actionPostbackError: 'An error occurred while processing your action. Please try again.',
-            // clickToRetry: 'Message not delivered. Click to retry.',
-            // conversationTimestampHeaderFormat: 'MMMM D YYYY, h:mm A',
-            // fetchHistory: 'Load more',
-            // fetchingHistory: 'Retrieving history...',
             headerText: 'OMCE, How can we help?',
-            // inputPlaceholder: 'Type a message...',
-            // invalidFileError: 'Only images are supported. Choose a file with a supported extension (jpg, jpeg, png, gif, or bmp).',
             introductionText: 'Mobile Cloud Enterprise',
-            // locationNotSupported: 'Your browser does not support location services or it’s been disabled. Please type your location instead.',
-            // locationSecurityRestriction: 'This website cannot access your location. Please type your location instead.',
-            // locationSendingFailed: 'Could not send location',
-            // locationServicesDenied: 'This website cannot access your location. Allow access in your settings or type your location instead.',
-            // messageError: 'An error occurred while sending your message. Please try again.',
-            // messageIndicatorTitlePlural: '({count}) New messages',
-            // messageIndicatorTitleSingular: '({count}) New message',
-            // messageRelativeTimeDay: '{value}d ago',
-            // messageRelativeTimeHour: '{value}h ago',
-            // messageRelativeTimeJustNow: 'just now',
-            // messageRelativeTimeMinute: '{value}m ago',
-            // messageTimestampFormat: 'hh:mm A',
-            // messageSending: 'Sending...',
-            // messageDelivered: 'Delivered',
-            // sendButtonText: 'Send',
-            // settingsHeaderText: 'Settings',
-            // tapToRetry: 'Message not delivered. Tap to retry.',
-            // unsupportedMessageType: 'Unsupported message type.',
-            // unsupportedActionType: 'Unsupported action type.'
         }
     }).then(function (res){
         Bots.updateUser(
