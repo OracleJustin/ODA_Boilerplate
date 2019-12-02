@@ -15,6 +15,6 @@ app.use(function(req, res, next) {
 var staticPath = path.join(__dirname, '/app');
 app.use(express.static(staticPath));
 
-app.listen(port, function() {
+app.listen(80, function() {
   console.log(`listening on port ${port}`);
 });
