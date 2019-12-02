@@ -4,7 +4,9 @@ var app = express();
 
 const process = require('process');
 
-const port = process.env.PORT || 3000;
+// Listen to port 80. Remember to run as SUDO or
+// the app will throw an error
+const port = process.env.PORT || 80;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
