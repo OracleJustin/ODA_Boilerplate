@@ -66,19 +66,8 @@ function editAppId(e) {
 }
 
 function loadChat(e) {
-	e.preventDefault();
-	console.log('Init Bots SDK');
-	var appId = window.localStorage.getItem("appId");
-	initBots(appId)
-		.then(function () {
-			console.log("init complete");
-			document.getElementById("loader").style.display = "none";
-			Bots.open();
-			document.getElementById("openChatButton").setAttribute("disabled", true)
-		})
-		.catch(function (err) {
-			console.log(err);
-		});
+	Bots.open()
+	document.getElementById("openChatButton").setAttribute("disabled", true)
 }
 
 function clearChat(e) {
