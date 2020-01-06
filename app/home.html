@@ -28,23 +28,16 @@
 					</button>
 				</div>
 				<div class="modal-body">
-				<div class="app-id indexpage" style="display: flex; flex-direction: column">
-					<span style="margin-bottom: 1rem">Edit App ID</span>
+					<div class="app-id indexpage" style="display: flex; flex-direction: column">
+						<span style="margin-bottom: 1rem">Edit App ID</span>
 						<label for="appId" class="sr-only">AppId</label>
 						<div style="display: flex">
-						<input type="text" 
-									 id="appId" 
-									 class="form-control" 
-									 placeholder="Enter the App ID" 
-									 required
-									 style="width: 80%"> 
-						<button type="button"  
-										class="btn btn-primary" 
-										style="width: 16%; margin-left: 0.8rem; min-width: 80px" 
-										type="submit" 
-										onclick="editAppId(event)">
-							Validate
-						</button>
+							<input type="text" id="appId" class="form-control" placeholder="Enter the App ID" required
+								style="width: 80%">
+							<button type="button" class="btn btn-primary" style="width: 16%; margin-left: 0.8rem; min-width: 80px"
+								type="submit" onclick="editAppId(event)">
+								Validate
+							</button>
 						</div>
 						<p class="error" style="margin-bottom: 0">Invalid App Id</p>
 						<p class="app-id-note">
@@ -95,20 +88,22 @@
 					right. <br /> Select "Clear Chat" to reset the dialog flow.
 				</p>
 			</div>
-			<div class="portal-cntr">
-				<button id="openChatButton" class="index-page continue-btn 
+			<div class="mobile-center">
+				<div class="portal-cntr">
+					<button id="openChatButton" class="index-page continue-btn 
 				btn-lg btn-primary btn 
 				btn-lg btn-primary static-size" type="submit" onclick="loadChat(event)">Chat With Bot</button>
-			</div>
-			<div class="portal-cntr">
-				<button class="index-page continue-btn 
+				</div>
+				<div class="portal-cntr">
+					<button class="index-page continue-btn 
 					btn-lg btn-primary btn 
 					btn-lg btn-primary static-size" onclick="clearChat(event)">Clear Chat</button>
-			</div>
-			<div class="portal-cntr">
-				<a class="index-page continue-btn 
+				</div>
+				<div class="portal-cntr">
+					<a class="index-page continue-btn 
 					btn-lg btn-primary btn 
 					btn-lg btn-primary static-size" data-toggle="modal" data-target="#settingModal">Change Bot Settings</a>
+				</div>
 			</div>
 			<div class="title" style="margin-top: 2rem">
 				<div class="sub-sec-heading">

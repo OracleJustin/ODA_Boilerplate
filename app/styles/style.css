@@ -235,6 +235,9 @@ p{
     font-weight: 200;
 }
 
+.mobile-center {
+}
+
 @media only screen and (min-width: 500px) {
     .footer-logo {
         margin-top: 10%;
@@ -248,4 +251,12 @@ p{
     .settings-icon {
         width: 15%;
     }
+
+    .mobile-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
