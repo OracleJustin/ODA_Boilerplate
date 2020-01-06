@@ -5,16 +5,90 @@ p{
     font-size: 18px;
 }
 
+.container {
+    max-height: calc(100vh - 59px);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.title-sec {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    color: #222;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sec-heading {
+    padding: 0 10px 0 12px;
+    float: left;
+}
+
+.sec-heading h1 {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 300;
+    color: #222;
+}
+
+.sub-sec-heading {
+    padding: 0 10px 0 12px;
+    float: left;
+}
+
+.sub-sec-heading h1 {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #222;
+    margin-top: 0.6rem;
+}
+
+.portal-cntr {
+    margin: 15px 12px 6px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.portal-sect {
+    border: 1px solid #ced4da;
+    background: #fff;
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 1rem 3rem 3rem 3rem;
+    cursor: default;
+}
+
+.portal-sect:hover {
+    border-color: #1d7cbf;
+    text-decoration: none;
+}
+
+.continue-btn {
+    padding-right: 6rem;
+    padding-left: 6rem;
+}
+
 .navbar {
     border-radius: 0;
 }
 
 .navbar-brand {
     color: #fff;
-}
-
-#configuration-form {
-    margin-top: 20%;
 }
 
 #loader {
@@ -29,8 +103,18 @@ p{
     width: 20%;
 }
 
-#appId {
-    margin-left: 5px;
+.docs-refer {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.docs-header {
+    font-size: 20px;
+    font-weight: 200;
+    color: #0572ce;
 }
 
 .form-signin-heading {
@@ -39,18 +123,14 @@ p{
 }
 
 .app-id{
-    margin-top: 10%;
-    margin-bottom: 10px;
+    margin-top: 2rem;
 }
 
 .app-id-note {
     margin-top: 10px;
-    visibility: hidden;
+    font-size: 1.4rem;
+    color: grey;
     text-align: left;
-}
-
-.app-id .form-control:focus + .app-id-note {
-    visibility: visible;
 }
 
 .footer-logo {
@@ -92,6 +172,8 @@ p{
 }
 .error{
     color: red;
+    font-size: 1.4rem;
+    margin-top: 1rem;
     display: none;
 }
 
@@ -143,9 +225,6 @@ p{
 }
 
 @media only screen and (min-width: 500px) {
-    #configuration-form {
-        margin-top: 10%;
-    }
     .footer-logo {
         margin-top: 10%;
         margin-bottom: 5%;
