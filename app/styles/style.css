@@ -73,6 +73,10 @@ p{
     cursor: default;
 }
 
+.static-size {
+    width: 280px;
+}
+
 .portal-sect:hover {
     border-color: #1d7cbf;
     text-decoration: none;
@@ -89,6 +93,13 @@ p{
 
 .navbar-brand {
     color: #fff;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #loader {
