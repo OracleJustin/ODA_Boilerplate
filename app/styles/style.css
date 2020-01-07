@@ -252,11 +252,13 @@ p{
         width: 15%;
     }
 
+}
+
+@media only screen and (max-device-width: 480px) {
     .mobile-center {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
 }
