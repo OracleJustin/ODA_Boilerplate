@@ -1,7 +1,4 @@
-/* .submit-button button {
-    margin-left: 70px;
-} */
-p{
+p {
     font-size: 18px;
 }
 
@@ -137,7 +134,7 @@ p{
 }
 
 .app-id{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .app-id-note {
@@ -260,6 +257,28 @@ p{
 
 .mobile-center {
 
+}
+
+.edit-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#return:before {
+  content: '✕';
+}
+
+#return {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+#body-elem {
+    background-size: cover;
+    background-repeat: repeat-x
 }
 
 @media only screen and (min-width: 500px) {

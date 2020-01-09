@@ -114,3 +114,34 @@ function initBots(appId) {
 		});
 	});
 }
+
+function saveChanges(e) {
+	e.preventDefault()
+	var file = document.getElementById("getVal").files[0];
+	var reader = new FileReader();
+	reader.onloadend = function(){
+			document.getElementById('body-elem')
+				.style.backgroundImage = "url(" + reader.result + ")"; 
+			document.getElementById('configuration-form')
+				.style.display = "none";
+			document.getElementById('cp-banner')
+				.style.display = "none";
+			document.getElementById('return')
+				.style.display = "block";
+	}
+	if(file){
+			reader.readAsDataURL(file);
+	}else{
+	}
+}
+
+function revertBackground(e) {
+	document.getElementById('body-elem')
+		.style.backgroundImage = "none"; 
+	document.getElementById('configuration-form')
+		.style.display = "unset";
+	document.getElementById('cp-banner')
+		.style.display = "block";
+	document.getElementById('return')
+		.style.display = "none";
+}
