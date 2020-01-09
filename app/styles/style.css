@@ -57,10 +57,11 @@ p{
 }
 
 .portal-cntr {
-    margin: 15px 12px 6px 12px;
+    margin: 1rem 12px 6px 12px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .portal-sect {
@@ -71,6 +72,8 @@ p{
     text-decoration: none;
     padding: 1rem 3rem 3rem 3rem;
     cursor: default;
+    margin-right: 1rem;
+    margin-top: 1rem;
 }
 
 .static-size {
