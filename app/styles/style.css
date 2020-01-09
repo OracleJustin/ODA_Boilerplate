@@ -1,3 +1,94 @@
+:root {
+    --main-light-grey: #C0C0C0;
+    --main-grey: #808080;
+    --main-black: #000000;
+    --main-red: #FF0000;
+    --main-maroon: #800000;
+    --main-yellow: #FFFF00;
+    --main-olive: #808000;
+    --main-lime: #00FF00;
+    --main-green: #008000;
+    --main-aqua: #00FFFF;
+    --main-default: #337ab7;
+    --main-blue: #0000FF;
+    --main-navy: #000080;
+    --main-fuchsia: #FF00FF;
+    --main-purple: #800080;
+}
+
+.theme-selector {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 4px;
+    margin-right: 0.4rem;
+    border: 1px solid var(--main-light-grey);
+}
+
+.theme-selector:focus {
+    border: 1px solid black !important;
+    outline: none !important;
+}
+
+#light-grey-theme {
+    background-color: var(--main-light-grey);
+}
+
+#grey-theme{
+    background-color: var(--main-grey);
+}
+
+#black-theme{
+    background-color: var(--main-black);
+}
+
+#red-theme {
+    background-color: var(--main-red);
+}
+
+#maroon-theme{
+    background-color: var(--main-maroon);
+}
+
+#yellow-theme{
+    background-color: var(--main-yellow);
+}
+
+#olive-theme {
+    background-color: var(--main-olive);
+}
+
+#lime-theme{
+    background-color: var(--main-lime);
+}
+
+#green-theme{
+    background-color: var(--main-green);
+}
+
+#aqua-theme {
+    background-color: var(--main-aqua);
+}
+
+#default-theme{
+    background-color: var(--main-default);
+}
+
+#blue-theme{
+    background-color: var(--main-blue);
+}
+
+#navy-theme {
+    background-color: var(--main-navy);
+}
+
+#fuchsia-theme{
+    background-color: var(--main-fuchsia);
+}
+
+#purple-theme{
+    background-color: var(--main-purple);
+}
+
 p {
     font-size: 18px;
 }
