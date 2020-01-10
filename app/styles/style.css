@@ -4,7 +4,7 @@
     --main-black: #000000;
     --main-red: #FF0000;
     --main-maroon: #800000;
-    --main-yellow: #FFFF00;
+    --main-yellow: #FFC300;
     --main-olive: #808000;
     --main-lime: #00FF00;
     --main-green: #008000;
@@ -14,6 +14,7 @@
     --main-navy: #000080;
     --main-fuchsia: #FF00FF;
     --main-purple: #800080;
+    --main-brown: #6E2C00;
 }
 
 .theme-selector {
@@ -87,6 +88,10 @@
 
 #purple-theme{
     background-color: var(--main-purple);
+}
+
+#brown-theme {
+    background-color: var(--main-brown);
 }
 
 p {

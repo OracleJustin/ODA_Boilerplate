@@ -150,7 +150,25 @@ function saveChanges(e) {
 		reader.readAsDataURL(file);
 	}
 
-	if (color !== "286090" || appId !== firstAppId){
+	if (color !== "286090" || appId !== firstAppId) {
+		Bots.destroy()
+		e.preventDefault();
+		// console.log('Validate appId', appId);
+		// validate app id
+		initBots(appId, color)
+			.then(function () {
+				// console.log('AppId is valid');
+				window.localStorage.setItem("appId", appId);
+				document.getElementById("loader").style.display = "none";
+				document.getElementById("saveButton").disabled = false;
+			})
+			.catch(function (err) {
+				initApp(e)
+				document.getElementById("loader").style.display = "none";
+				document.getElementsByClassName("error")[0].style.display = 'block';
+				// console.log('AppId validating error', err);
+				document.getElementById("saveButton").disabled = false;
+			});
 		console.log("oh no. Gotta reset alot of stuff now")
 	}
 }
