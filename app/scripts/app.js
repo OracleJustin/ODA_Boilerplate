@@ -8,6 +8,7 @@
 
 var color = "286090";
 var firstAppId = "";
+var firstMessage = false;
 
 var defaultInit = {
 	businessName: 'Oracle, MCE',
@@ -74,28 +75,6 @@ function saveAppId(e) {
 		});
 }
 
-function editAppId(e) {
-	Bots.destroy()
-	e.preventDefault();
-	let appId = document.getElementById("appId").value;
-	// console.log('Validate appId', appId);
-	// validate app id
-	initBots(appId)
-		.then(function () {
-			// console.log('AppId is valid');
-			window.localStorage.setItem("appId", appId);
-			document.getElementById("loader").style.display = "none";
-			document.getElementById("saveButton").disabled = false;
-		})
-		.catch(function (err) {
-			initApp(e)
-			document.getElementById("loader").style.display = "none";
-			document.getElementsByClassName("error")[0].style.display = 'block';
-			// console.log('AppId validating error', err);
-			document.getElementById("saveButton").disabled = false;
-		});
-}
-
 function loadChat(e) {
 	console.log(Bots)
 	Bots.open()
@@ -136,21 +115,21 @@ function saveChanges(e) {
 	e.preventDefault()
 	var file = document.getElementById("getVal").files[0];
 	var reader = new FileReader();
-	reader.onloadend = function(){
-			document.getElementById('body-elem')
-				.style.backgroundImage = "url(" + reader.result + ")"; 
-			document.getElementById('configuration-form')
-				.style.display = "none";
-			document.getElementById('cp-banner')
-				.style.display = "none";
-			document.getElementById('return')
-				.style.display = "block";
+	reader.onloadend = function () {
+		document.getElementById('body-elem')
+			.style.backgroundImage = "url(" + reader.result + ")";
+		document.getElementById('configuration-form')
+			.style.display = "none";
+		document.getElementById('cp-banner')
+			.style.display = "none";
+		document.getElementById('return')
+			.style.display = "block";
 	}
-	if(file){
+	if (file) {
 		reader.readAsDataURL(file);
 	}
 
-	if (color !== "286090" || appId !== firstAppId) {
+	if (color !== "286090" || appId !== firstAppId || firstMessage) {
 		Bots.destroy()
 		e.preventDefault();
 		// console.log('Validate appId', appId);
@@ -161,6 +140,27 @@ function saveChanges(e) {
 				window.localStorage.setItem("appId", appId);
 				document.getElementById("loader").style.display = "none";
 				document.getElementById("saveButton").disabled = false;
+			}).then(function () {
+				if (firstMessage) {
+					var initMessage = document.getElementById('promptText').value
+					var messageBody = {
+						text: initMessage,
+						type: 'text',
+						metadata: {
+							isHidden: true
+						}
+					};
+					Bots.setDelegate({
+						beforeDisplay(messageBody) {
+							if (messageBody.metadata && messageBody.metadata.isHidden) {
+								return null;
+							}
+							return messageBody;
+						}
+					});
+					Bots.sendMessage(messageBody);
+				}
+				// console.log("firing")
 			})
 			.catch(function (err) {
 				initApp(e)
@@ -169,22 +169,22 @@ function saveChanges(e) {
 				// console.log('AppId validating error', err);
 				document.getElementById("saveButton").disabled = false;
 			});
-		console.log("oh no. Gotta reset alot of stuff now")
 	}
 }
 
-$('.theme-selector').on("click", function() {
+$('.theme-selector').on("click", function () {
+	$('.theme-selector').removeClass('active-selector');
+	$(this).addClass('active-selector')
 	colorArr = $(this).css("backgroundColor").split(", ");
-	partOne = colorArr[0].replace(/\D/g,'');
-	partTwo = colorArr[1].replace(/\D/g,'');
-	partThree = colorArr[2].replace(/\D/g,'');
+	partOne = colorArr[0].replace(/\D/g, '');
+	partTwo = colorArr[1].replace(/\D/g, '');
+	partThree = colorArr[2].replace(/\D/g, '');
 	color = fullColorHex(partOne, partTwo, partThree)
-	console.log(color);
 })
 
 function revertBackground(e) {
 	document.getElementById('body-elem')
-		.style.backgroundImage = "none"; 
+		.style.backgroundImage = "none";
 	document.getElementById('configuration-form')
 		.style.display = "unset";
 	document.getElementById('cp-banner')
@@ -193,19 +193,31 @@ function revertBackground(e) {
 		.style.display = "none";
 }
 
+function clickRadio(e) {
+	if (e === "Yes") {
+		document.getElementById('promptText')
+			.style.display = "unset";
+		firstMessage = true;
+	} else {
+		document.getElementById('promptText')
+			.style.display = "none";
+		firstMessage = false;
+	}
+}
+
 // Color Functions
 
-var rgbToHex = function (rgb) { 
-  var hex = Number(rgb).toString(16);
-  if (hex.length < 2) {
-       hex = "0" + hex;
-  }
-  return hex;
+var rgbToHex = function (rgb) {
+	var hex = Number(rgb).toString(16);
+	if (hex.length < 2) {
+		hex = "0" + hex;
+	}
+	return hex;
 };
 
-var fullColorHex = function(r,g,b) {   
-  var red = rgbToHex(r);
-  var green = rgbToHex(g);
-  var blue = rgbToHex(b);
-  return red+green+blue;
+var fullColorHex = function (r, g, b) {
+	var red = rgbToHex(r);
+	var green = rgbToHex(g);
+	var blue = rgbToHex(b);
+	return red + green + blue;
 };

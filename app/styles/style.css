@@ -26,8 +26,12 @@
 }
 
 .theme-selector:focus {
-    border: 1px solid black !important;
+    /* border: 1px solid black !important; */
     outline: none !important;
+}
+
+.active-selector {
+    border: 1px solid black !important;
 }
 
 #light-grey-theme {
@@ -374,7 +378,11 @@ p {
 
 #body-elem {
     background-size: cover;
-    background-repeat: repeat-x
+    background-repeat: repeat-x; 
+}
+
+.prompt-label {
+    font-weight: normal !important;
 }
 
 @media only screen and (min-width: 500px) {
